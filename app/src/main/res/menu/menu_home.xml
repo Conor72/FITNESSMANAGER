@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ie.conor.activities.Fitness">
+
+    <item
+        android:id="@+id/action_report"
+        android:orderInCategory="100"
+        android:title="@string/action_report"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_fitness"
+        android:orderInCategory="100"
+        android:title="@string/action_fitness"
+        app:showAsAction="never" />
+</menu>
