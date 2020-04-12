@@ -144,7 +144,7 @@ fun addMapMarkers(dl : ArrayList<FitnessModel>, map: GoogleMap) {
     dl.forEach {
         map.addMarker(
             MarkerOptions().position(LatLng(it.latitude, it.longitude))
-                .title("${it.paymenttype} €${it.amount}")
+                .title("${it.firstName} €${it.weight}")
                 .snippet(it.message)
                 .icon(
                     BitmapDescriptorFactory.fromResource(R.mipmap.ic_homer_map))

@@ -46,8 +46,8 @@ class EditFragment : Fragment(), AnkoLogger {
         activity?.title = getString(R.string.action_edit)
         loader = createLoader(activity!!)
 
-        root.editAmount.setText(editFitness!!.amount.toString())
-        root.editPaymenttype.setText(editFitness!!.paymenttype)
+        root.editAmount.setText(editFitness!!.weight.toString())
+        root.editPaymenttype.setText(editFitness!!.firstName)
         root.editMessage.setText(editFitness!!.message)
         root.editUpvotes.setText(editFitness!!.upvotes.toString())
 
@@ -73,7 +73,7 @@ class EditFragment : Fragment(), AnkoLogger {
     }
 
     fun updateFitnessData() {
-        editFitness!!.amount = root.editAmount.text.toString().toInt()
+        editFitness!!.weight = root.editAmount.text.toString().toInt()
         editFitness!!.message = root.editMessage.text.toString()
         editFitness!!.upvotes = root.editUpvotes.text.toString().toInt()
     }

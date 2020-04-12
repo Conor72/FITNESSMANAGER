@@ -45,15 +45,6 @@ class FitnessFragment : Fragment(), AnkoLogger {
         val root = inflater.inflate(R.layout.fragment_fitness, container, false)
         loader = createLoader(activity!!)
         activity?.title = getString(R.string.action_fitness)
-
-        root.progressBar.max = 10000
-        root.amountPicker.minValue = 1
-        root.amountPicker.maxValue = 1000
-
-        root.amountPicker.setOnValueChangedListener { picker, oldVal, newVal ->
-            //Display the newly selected number to paymentAmount
-            root.paymentAmount.setText("$newVal")
-        }
         setButtonListener(root)
         setFavouriteListener(root)
         return root;
@@ -69,13 +60,13 @@ class FitnessFragment : Fragment(), AnkoLogger {
 
     fun setButtonListener( layout: View) {
         layout.fitnessButton.setOnClickListener {
-            val amount = if (layout.paymentAmount.text.isNotEmpty())
+            val weight = if (layout.paymentAmount.text.isNotEmpty())
                 layout.paymentAmount.text.toString().toInt() else layout.amountPicker.value
             if(totalFitness >= layout.progressBar.max)
                 activity?.toast("Fitness Amount Exceeded!")
             else {
-                val paymentmethod = if(layout.paymentMethod.checkedRadioButtonId == R.id.Direct) "Direct" else "Paypal"
-                writeNewFitness(FitnessModel(paymenttype = paymentmethod, amount = amount,
+                val firstName = if(layout.paymentMethod.checkedRadioButtonId == R.id.Direct) "Direct" else "Paypal"
+                writeNewFitness(FitnessModel(firstName = firstName, weight = weight,
                     profilepic = app.userImage.toString(),
                     isfavourite = favourite,
                     latitude = app.currentLocation.latitude,
@@ -145,7 +136,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
                 val children = snapshot.children
                 children.forEach {
                     val fitness = it.getValue<FitnessModel>(FitnessModel::class.java)
-                    totalFitness += fitness!!.amount
+                    totalFitness += fitness!!.weight
                 }
                 progressBar.progress = totalFitness
                 totalSoFar.text = format("$ $totalFitness")

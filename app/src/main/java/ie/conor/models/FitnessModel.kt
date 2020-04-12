@@ -9,10 +9,13 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class FitnessModel(
     var uid: String? = "",
-    var paymenttype: String = "N/A",
-    var amount: Int = 0,
+    var firstName: String = "N/A",
+    var weight: Int = 0,
     var message: String = "a message",
     var upvotes: Int = 0,
+
+
+
     var profilepic: String = "",
     var isfavourite: Boolean = false,
     var latitude: Double = 0.0,
@@ -24,8 +27,8 @@ data class FitnessModel(
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "uid" to uid,
-            "paymenttype" to paymenttype,
-            "amount" to amount,
+            "firstName" to firstName,
+            "weight" to weight,
             "message" to message,
             "upvotes" to upvotes,
             "profilepic" to profilepic,
