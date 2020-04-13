@@ -15,12 +15,9 @@ import ie.conor.R
 import ie.conor.main.FitnessApp
 import ie.conor.models.FitnessModel
 import ie.conor.utils.*
-import kotlinx.android.synthetic.main.fragment_fitness.*
 import kotlinx.android.synthetic.main.fragment_fitness.view.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
-import org.jetbrains.anko.toast
-import java.lang.String.format
 import java.util.HashMap
 
 
@@ -62,7 +59,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
     }
 
     fun setButtonListener( layout: View) {
-        layout.fitnessButton.setOnClickListener {
+        layout.editUpdateButton.setOnClickListener {
 
 
                 writeNewFitness(FitnessModel(

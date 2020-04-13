@@ -47,10 +47,9 @@ class EditFragment : Fragment(), AnkoLogger {
         loader = createLoader(activity!!)
 
         root.editAmount.setText(editFitness!!.weight.toString())
-   //     root.editPaymenttype.setText(editFitness!!.firstName)
-        root.editFirstName.setText(editFitness!!.firstName.toString())
-        root.editFirstName.setText(editFitness!!.message)
-        root.editUpvotes.setText(editFitness!!.upvotes.toString())
+        root.editFirstName.setText(editFitness!!.firstName)
+        root.editLastName.setText(editFitness!!.lastName)
+        root.editHeight.setText(editFitness!!.height)
 
         root.editUpdateButton.setOnClickListener {
             showLoader(loader, "Updating Fitness on Server...")
@@ -74,10 +73,10 @@ class EditFragment : Fragment(), AnkoLogger {
     }
 
     fun updateFitnessData() {
-        editFitness!!.weight = root.editAmount.text.toString().toInt()
         editFitness!!.firstName = root.editFirstName.text.toString()
-        editFitness!!.message = root.editFirstName.text.toString()
-        editFitness!!.upvotes = root.editUpvotes.text.toString().toInt()
+        editFitness!!.lastName = root.editLastName.text.toString()
+        editFitness!!.weight = root.editAmount.text.toString().toInt()
+        editFitness!!.height = root.editHeight.text.toString()
     }
 
     fun updateUserFitness(userId: String, uid: String?, fitness: FitnessModel) {
