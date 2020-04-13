@@ -45,7 +45,7 @@ open class ReportFragment : Fragment(), AnkoLogger,
         root = inflater.inflate(R.layout.fragment_report, container, false)
         activity?.title = getString(R.string.action_report)
 
-        root.recyclerView.setLayoutManager(LinearLayoutManager(activity))
+        root.recyclerView.layoutManager = LinearLayoutManager(activity)
         setSwipeRefresh()
 
         val swipeDeleteHandler = object : SwipeToDeleteCallback(activity!!) {

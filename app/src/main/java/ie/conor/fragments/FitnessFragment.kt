@@ -26,8 +26,11 @@ import java.util.HashMap
 
 class FitnessFragment : Fragment(), AnkoLogger {
 
+
+    var fitness = FitnessModel()
     lateinit var app: FitnessApp
     var totalFitness = 0
+
     lateinit var loader : AlertDialog
     lateinit var eventListener : ValueEventListener
     var favourite = false
@@ -60,20 +63,22 @@ class FitnessFragment : Fragment(), AnkoLogger {
 
     fun setButtonListener( layout: View) {
         layout.fitnessButton.setOnClickListener {
-            val weight = if (layout.paymentAmount.text.isNotEmpty())
-                layout.paymentAmount.text.toString().toInt() else layout.amountPicker.value
-            if(totalFitness >= layout.progressBar.max)
-                activity?.toast("Fitness Amount Exceeded!")
-            else {
-                val firstName = if(layout.paymentMethod.checkedRadioButtonId == R.id.Direct) "Direct" else "Paypal"
-                writeNewFitness(FitnessModel(firstName = firstName, weight = weight,
+
+
+                writeNewFitness(FitnessModel(
+//ADD IN AREA TO PUT DATA IN FOR Last Name AND height
+
+                    firstName = fitness.firstName,
+                    lastName = fitness.lastName,
+                    weight = fitness.weight,
+                    height = fitness.height,
                     profilepic = app.userImage.toString(),
                     isfavourite = favourite,
                     latitude = app.currentLocation.latitude,
                     longitude = app.currentLocation.longitude,
                     email = app.auth.currentUser?.email))
             }
-        }
+
     }
 
     fun setFavouriteListener (layout: View) {
@@ -136,10 +141,8 @@ class FitnessFragment : Fragment(), AnkoLogger {
                 val children = snapshot.children
                 children.forEach {
                     val fitness = it.getValue<FitnessModel>(FitnessModel::class.java)
-                    totalFitness += fitness!!.weight
+                 totalFitness += fitness!!.weight
                 }
-                progressBar.progress = totalFitness
-                totalSoFar.text = format("$ $totalFitness")
             }
         }
 

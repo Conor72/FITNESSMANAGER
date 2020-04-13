@@ -9,13 +9,14 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class FitnessModel(
     var uid: String? = "",
-    var firstName: String = "N/A",
+
+    var firstName: String = "",
+    var lastName: String ="",
+    var height: String ="",
     var weight: Int = 0,
+
     var message: String = "a message",
     var upvotes: Int = 0,
-
-
-
     var profilepic: String = "",
     var isfavourite: Boolean = false,
     var latitude: Double = 0.0,

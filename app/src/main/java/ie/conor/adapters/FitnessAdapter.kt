@@ -47,8 +47,8 @@ class FitnessAdapter constructor(var fitnessx: ArrayList<FitnessModel>,
 
         fun bind(fitness: FitnessModel, listener: FitnessListener, reportAll: Boolean) {
             itemView.tag = fitness
-            itemView.paymentamount.text = fitness.weight.toString()
-            itemView.paymentmethod.text = fitness.firstName
+            itemView.firstname.text = fitness.firstName
+            itemView.customerWeight.text = fitness.weight.toString()
             if(fitness.isfavourite) itemView.imagefavourite.setImageResource(android.R.drawable.star_big_on)
 
             if(!reportAll)
