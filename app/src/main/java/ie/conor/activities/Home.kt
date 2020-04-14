@@ -84,8 +84,6 @@ class Home : AppCompatActivity(),
                 navigateTo(ReportFragment.newInstance())
             R.id.nav_report_all ->
                 navigateTo(ReportAllFragment.newInstance())
-            R.id.nav_aboutus ->
-                navigateTo(AboutUsFragment.newInstance())
             R.id.nav_favourites ->
                 navigateTo(FavouritesFragment.newInstance())
             R.id.nav_sign_out -> signOut()

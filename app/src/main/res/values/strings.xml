@@ -1,20 +1,15 @@
 <resources>
     <string name="app_name">Fitness</string>
-    <string name="action_fitness">Donate</string>
+    <string name="action_fitness">Fitness</string>
     <string name="action_report">Report</string>
-    <string name="fitnessTitle">Welcome Homer</string>
+    <string name="fitnessTitle">Welcome</string>
     <string name="fitnessSubtitle">Please Give Generously</string>
-    <string name="fitnessButton">Donate</string>
-    <string name="paypal">PayPal</string>
-    <string name="direct">Direct</string>
+    <string name="fitnessButton">Fitness</string>
     <string name="amount">Amount</string>
-    <string name="total">Total so Far</string>
-    <string name="totalSoFar">$ Total</string>
     <string name="reportTitle">Customer List</string>
     <string name="defaultAmount">00</string>
     <string name="defaultMethod">N/A</string>
     <string name="enter_amount">Enter Amount</string>
-
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -23,9 +18,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_fitness">Donate</string>
-    <string name="menu_report">Report</string>
-    <string name="menu_favourites">Favourites</string>
+    <string name="menu_fitness">Add Customer</string>
+    <string name="menu_report">All Customers</string>
+    <string name="menu_favourites">Premium Members</string>
     <string name="menu_about">About Us</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
@@ -33,7 +28,7 @@
     <string name="aboutus_title">Homer for President !!</string>
     <string name="aboutus_message">Hi, I\'m Homer\n\nPlease vote for me.\n\n Please Please Please Please!!</string>
 
-    <string name="messageLoading">Please wait while we Connect to the Server...</string>
+    <string name="messageLoading">Loading...</string>
 
     <string name="action_edit">Edit Customer</string>
     <string name="action_update">Update</string>
