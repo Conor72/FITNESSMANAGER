@@ -11,8 +11,8 @@ data class FitnessModel(
     var uid: String? = "",
     var firstName: String = "",
     var lastName: String ="",
-    var height: String ="",
-    var weight: Int = 0,
+    var height: String = "",
+    var weight: String = "",
 
     var message: String = "a message",
     var upvotes: Int = 0,
@@ -28,7 +28,10 @@ data class FitnessModel(
         return mapOf(
             "uid" to uid,
             "firstName" to firstName,
+            "lastName" to lastName,
             "weight" to weight,
+            "height" to height,
+
             "message" to message,
             "upvotes" to upvotes,
             "profilepic" to profilepic,

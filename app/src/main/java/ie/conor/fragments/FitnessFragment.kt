@@ -16,6 +16,7 @@ import ie.conor.main.FitnessApp
 import ie.conor.models.FitnessModel
 import ie.conor.utils.*
 import kotlinx.android.synthetic.main.fragment_fitness.view.*
+import kotlinx.android.synthetic.main.fragment_fitness.view.imagefavourite
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 import java.util.HashMap
@@ -69,6 +70,9 @@ class FitnessFragment : Fragment(), AnkoLogger {
                     profilepic = app.userImage.toString(),
                     isfavourite = favourite,
                     firstName = layout.FirstName.text.toString(),
+                    lastName = layout.LastName.text.toString(),
+                    height = layout.Height.text.toString(),
+                    weight = layout.Weight.text.toString(),
                     latitude = app.currentLocation.latitude,
                     longitude = app.currentLocation.longitude,
                     email = app.auth.currentUser?.email))
@@ -136,7 +140,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
                 val children = snapshot.children
                 children.forEach {
                     val fitness = it.getValue<FitnessModel>(FitnessModel::class.java)
-                    totalFitness += fitness!!.weight
+                  //  totalFitness += fitness!!.weight
 
                 }
              //   progressBar.progress = totalFitness
