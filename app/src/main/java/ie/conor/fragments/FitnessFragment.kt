@@ -84,11 +84,11 @@ class FitnessFragment : Fragment(), AnkoLogger {
         layout.imagefavourite.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
                 if (!favourite) {
-                    layout.imagefavourite.setImageResource(android.R.drawable.star_big_on)
+                    layout.imagefavourite.setImageResource(R.drawable.ic_premium_on)
                     favourite = true
                 }
                 else {
-                    layout.imagefavourite.setImageResource(android.R.drawable.star_big_off)
+                    layout.imagefavourite.setImageResource(R.drawable.ic_premium_off)
                     favourite = false
                 }
             }
