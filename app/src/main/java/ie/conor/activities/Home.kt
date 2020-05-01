@@ -20,6 +20,7 @@ import ie.conor.fragments.*
 import ie.conor.main.FitnessApp
 import ie.conor.utils.*
 import ie.wit.fragments.FavouritesFragment
+import ie.wit.fragments.FitnessFragment
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.home.*

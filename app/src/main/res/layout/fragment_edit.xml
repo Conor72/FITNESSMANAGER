@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FitnessFragment">
+    tools:context=".fragments.EditFragment">
 
     <TextView
         android:id="@+id/LastNameText"
@@ -83,7 +83,7 @@
         app:layout_constraintVertical_bias="0.316" />
 
     <EditText
-        android:id="@+id/editHeight"
+        android:id="@+id/Weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -148,13 +148,13 @@
         android:layout_marginBottom="13dp"
         android:text="EDIT CUSTOMER"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/editFirstName"
+        app:layout_constraintBottom_toTopOf="@+id/FirstName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editFirstName"
+        android:id="@+id/FirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
@@ -164,14 +164,14 @@
         android:ems="10"
         android:hint="Enter First Name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editLastName"
+        app:layout_constraintBottom_toTopOf="@+id/LastName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/FirstNameText"
         app:layout_constraintTop_toBottomOf="@+id/customerCustomerCreation" />
 
     <EditText
-        android:id="@+id/editLastName"
+        android:id="@+id/LastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
@@ -184,6 +184,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/LastNameText"
-        app:layout_constraintTop_toBottomOf="@+id/editFirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/FirstName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

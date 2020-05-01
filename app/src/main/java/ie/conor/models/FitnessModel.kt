@@ -9,7 +9,6 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class FitnessModel(
     var uid: String? = "",
-
     var firstName: String = "",
     var lastName: String ="",
     var height: String ="",

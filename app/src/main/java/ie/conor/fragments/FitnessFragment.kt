@@ -1,4 +1,4 @@
-package ie.conor.fragments
+package ie.wit.fragments
 
 
 import android.os.Bundle
@@ -27,7 +27,6 @@ class FitnessFragment : Fragment(), AnkoLogger {
     var fitness = FitnessModel()
     lateinit var app: FitnessApp
     var totalFitness = 0
-
     lateinit var loader : AlertDialog
     lateinit var eventListener : ValueEventListener
     var favourite = false
@@ -45,6 +44,9 @@ class FitnessFragment : Fragment(), AnkoLogger {
         val root = inflater.inflate(R.layout.fragment_fitness, container, false)
         loader = createLoader(activity!!)
         activity?.title = getString(R.string.action_fitness)
+
+
+
         setButtonListener(root)
         setFavouriteListener(root)
         return root;
@@ -62,21 +64,17 @@ class FitnessFragment : Fragment(), AnkoLogger {
         layout.fitnessButton.setOnClickListener {
 
 
-                writeNewFitness(FitnessModel(
-//ADD IN AREA TO PUT DATA IN FOR Last Name AND height
 
-                    firstName = fitness.firstName,
-                    lastName = fitness.lastName,
-                    weight = fitness.weight,
-                    height = fitness.height,
+                writeNewFitness(FitnessModel(
                     profilepic = app.userImage.toString(),
                     isfavourite = favourite,
+                    firstName = layout.FirstName.text.toString(),
                     latitude = app.currentLocation.latitude,
                     longitude = app.currentLocation.longitude,
                     email = app.auth.currentUser?.email))
             }
+        }
 
-    }
 
     fun setFavouriteListener (layout: View) {
         layout.imagefavourite.setOnClickListener(object : View.OnClickListener {
@@ -107,7 +105,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
     }
 
     fun writeNewFitness(fitness: FitnessModel) {
-        // Create new donation at /donations & /donations/$uid
+        // Create new fitness at /fitnessx & /fitnessx/$uid
         showLoader(loader, "Adding Fitness to Firebase")
         info("Firebase DB Reference : $app.database")
         val uid = app.auth.currentUser!!.uid
@@ -127,8 +125,6 @@ class FitnessFragment : Fragment(), AnkoLogger {
         hideLoader(loader)
     }
 
-
-
     fun getTotalFitness(userId: String?) {
         eventListener = object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -140,15 +136,15 @@ class FitnessFragment : Fragment(), AnkoLogger {
                 val children = snapshot.children
                 children.forEach {
                     val fitness = it.getValue<FitnessModel>(FitnessModel::class.java)
-                 totalFitness += fitness!!.weight
+                    totalFitness += fitness!!.weight
+
                 }
+             //   progressBar.progress = totalFitness
+               // totalSoFar.text = format("$ $totalFitness")
             }
         }
 
         app.database.child("user-fitnessx").child(userId!!)
             .addValueEventListener(eventListener)
     }
-
-
-
 }
