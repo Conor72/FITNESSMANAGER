@@ -41,7 +41,7 @@
 
 
     <Button
-        android:id="@+id/editUpdateButton"
+        android:id="@+id/fitnessButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

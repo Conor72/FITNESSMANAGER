@@ -59,7 +59,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
     }
 
     fun setButtonListener( layout: View) {
-        layout.editUpdateButton.setOnClickListener {
+        layout.fitnessButton.setOnClickListener {
 
 
                 writeNewFitness(FitnessModel(
@@ -127,6 +127,8 @@ class FitnessFragment : Fragment(), AnkoLogger {
         hideLoader(loader)
     }
 
+
+
     fun getTotalFitness(userId: String?) {
         eventListener = object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
@@ -146,4 +148,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
         app.database.child("user-fitnessx").child(userId!!)
             .addValueEventListener(eventListener)
     }
+
+
+
 }

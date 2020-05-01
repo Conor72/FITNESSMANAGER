@@ -1,15 +1,22 @@
-package ie.conor.fragments
+package ie.wit.fragments
 
+import android.content.Context
+import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.gms.maps.LocationSource
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import ie.conor.R
 import ie.conor.main.FitnessApp
 import ie.conor.utils.getAllFitnessx
 import ie.conor.utils.getFavouriteFitnessx
 import ie.conor.utils.setMapMarker
+import ie.conor.utils.trackLocation
 import kotlinx.android.synthetic.main.fragment_favourites.*
 
 

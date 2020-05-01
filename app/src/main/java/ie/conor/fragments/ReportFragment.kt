@@ -132,6 +132,8 @@ open class ReportFragment : Fragment(), AnkoLogger,
             getAllFitnessx(app.auth.currentUser!!.uid)
     }
 
+
+
     fun getAllFitnessx(userId: String?) {
         loader = createLoader(activity!!)
         showLoader(loader, "Downloading Fitness from Firebase")

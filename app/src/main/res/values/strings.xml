@@ -19,8 +19,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_fitness">Add Customer</string>
-    <string name="menu_report">All Customers</string>
-    <string name="menu_favourites">Premium Members</string>
+    <string name="menu_report">My Customers</string>
+    <string name="menu_favourites">Premium Map View</string>
     <string name="menu_about">About Us</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>

@@ -19,6 +19,7 @@ import ie.conor.R
 import ie.conor.fragments.*
 import ie.conor.main.FitnessApp
 import ie.conor.utils.*
+import ie.wit.fragments.FavouritesFragment
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import kotlinx.android.synthetic.main.app_bar_home.*
 import kotlinx.android.synthetic.main.home.*
@@ -102,8 +103,9 @@ class Home : AppCompatActivity(),
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
-            R.id.action_fitness -> toast("You Selected Fitness")
-            R.id.action_report -> toast("You Selected Report")
+            R.id.action_report -> navigateTo(FitnessFragment.newInstance())
+            R.id.action_fitness -> navigateTo(ReportFragment.newInstance())
+            R.id.nav_report_all -> navigateTo(ReportAllFragment.newInstance())
         }
         return super.onOptionsItemSelected(item)
     }

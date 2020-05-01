@@ -16,6 +16,7 @@ import ie.conor.adapters.FitnessAdapter
 import ie.conor.adapters.FitnessListener
 import ie.conor.models.FitnessModel
 import ie.conor.utils.*
+import kotlinx.android.synthetic.main.card_fitness.*
 import kotlinx.android.synthetic.main.fragment_report.view.*
 import org.jetbrains.anko.info
 
