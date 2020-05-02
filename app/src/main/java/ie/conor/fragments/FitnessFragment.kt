@@ -1,6 +1,4 @@
-package ie.wit.fragments
-
-
+package ie.conor.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -81,14 +79,14 @@ class FitnessFragment : Fragment(), AnkoLogger {
 
     override fun onResume() {
         super.onResume()
-        getTotalFitness(app.auth.currentUser?.uid)
+        getTotalFitness(app.currentUser?.uid)
     }
 
     override fun onPause() {
         super.onPause()
-        if(app.auth.uid != null)
+        if(app.currentUser != null)             // MAY NEED TO CHANGE THIS BACK TO if(app.uid != null)
             app.database.child("user-fitnessx")
-                .child(app.auth.currentUser!!.uid)
+                .child(app.currentUser!!.uid)
                 .removeEventListener(eventListener)
     }
 
@@ -96,7 +94,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
         // Create new fitness at /fitnessx & /fitnessx/$uid
         showLoader(loader, "Adding Fitness to Firebase")
         info("Firebase DB Reference : $app.database")
-        val uid = app.auth.currentUser!!.uid
+        val uid = app.currentUser!!.uid
         val key = app.database.child("fitnessx").push().key
         if (key == null) {
             info("Firebase Error : Key Empty")
@@ -124,20 +122,16 @@ class FitnessFragment : Fragment(), AnkoLogger {
                 val children = snapshot.children
                 children.forEach {
                     val fitness = it.getValue<FitnessModel>(FitnessModel::class.java)
-                  //  totalFitness += fitness!!.weight
+
 
                 }
-             //   progressBar.progress = totalFitness
-               // totalSoFar.text = format("$ $totalFitness")
+
             }
         }
 
         app.database.child("user-fitnessx").child(userId!!)
             .addValueEventListener(eventListener)
     }
-
-
-
 
 
     fun setButtonListener( layout: View) {
@@ -181,7 +175,7 @@ class FitnessFragment : Fragment(), AnkoLogger {
                             weight = layout.Weight.text.toString(),
                             latitude = app.currentLocation.latitude,
                             longitude = app.currentLocation.longitude,
-                            email = app.auth.currentUser?.email
+                            email = app.currentUser?.email
                         )
                     )
 

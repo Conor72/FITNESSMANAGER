@@ -55,7 +55,7 @@ class EditFragment : Fragment(), AnkoLogger {
             showLoader(loader, "Updating Fitness on Server...")
             updateFitnessData()
             updateFitness(editFitness!!.uid, editFitness!!)
-            updateUserFitness(app.auth.currentUser!!.uid,
+            updateUserFitness(app.currentUser!!.uid,
                                editFitness!!.uid, editFitness!!)
         }
 

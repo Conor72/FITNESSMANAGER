@@ -53,7 +53,7 @@ open class ReportFragment : Fragment(), AnkoLogger,
                 val adapter = root.recyclerView.adapter as FitnessAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
                 deleteFitness((viewHolder.itemView.tag as FitnessModel).uid)
-                deleteUserFitness(app.auth.currentUser!!.uid,
+                deleteUserFitness(app.currentUser!!.uid,
                                   (viewHolder.itemView.tag as FitnessModel).uid)
             }
         }
@@ -83,7 +83,7 @@ open class ReportFragment : Fragment(), AnkoLogger,
         root.swiperefresh.setOnRefreshListener(object : SwipeRefreshLayout.OnRefreshListener {
             override fun onRefresh() {
                 root.swiperefresh.isRefreshing = true
-                getAllFitnessx(app.auth.currentUser!!.uid)
+                getAllFitnessx(app.currentUser!!.uid)
             }
         })
     }
@@ -129,7 +129,7 @@ open class ReportFragment : Fragment(), AnkoLogger,
     override fun onResume() {
         super.onResume()
         if(this::class == ReportFragment::class)
-            getAllFitnessx(app.auth.currentUser!!.uid)
+            getAllFitnessx(app.currentUser!!.uid)
     }
 
 

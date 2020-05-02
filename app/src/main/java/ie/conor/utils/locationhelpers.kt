@@ -99,7 +99,7 @@ fun setMapMarker(app: FitnessApp) {
 fun getAllFitnessx(app: FitnessApp) {
     val fitnessxList = ArrayList<FitnessModel>()
 
-    app.database.child("user-fitnessx").child(app.auth.currentUser!!.uid)
+    app.database.child("user-fitnessx").child(app.currentUser!!.uid)
         .addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {}
 
@@ -120,7 +120,7 @@ fun getAllFitnessx(app: FitnessApp) {
 fun getFavouriteFitnessx(app: FitnessApp) {
     val fitnessxList = ArrayList<FitnessModel>()
 
-    app.database.child("user-fitnessx").child(app.auth.currentUser!!.uid)
+    app.database.child("user-fitnessx").child(app.currentUser!!.uid)
         .orderByChild("isfavourite")
         .equalTo(true)
         .addValueEventListener(object : ValueEventListener {
