@@ -19,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_fitness.view.*
 import kotlinx.android.synthetic.main.fragment_fitness.view.imagefavourite
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
+import org.jetbrains.anko.toast
 import java.util.HashMap
 
 
@@ -61,23 +62,6 @@ class FitnessFragment : Fragment(), AnkoLogger {
             }
     }
 
-    fun setButtonListener( layout: View) {
-        layout.fitnessButton.setOnClickListener {
-
-
-
-                writeNewFitness(FitnessModel(
-                    profilepic = app.userImage.toString(),
-                    isfavourite = favourite,
-                    firstName = layout.FirstName.text.toString(),
-                    lastName = layout.LastName.text.toString(),
-                    height = layout.Height.text.toString(),
-                    weight = layout.Weight.text.toString(),
-                    latitude = app.currentLocation.latitude,
-                    longitude = app.currentLocation.longitude,
-                    email = app.auth.currentUser?.email))
-            }
-        }
 
 
     fun setFavouriteListener (layout: View) {
@@ -151,4 +135,80 @@ class FitnessFragment : Fragment(), AnkoLogger {
         app.database.child("user-fitnessx").child(userId!!)
             .addValueEventListener(eventListener)
     }
+
+
+
+
+
+    fun setButtonListener( layout: View) {
+        layout.fitnessButton.setOnClickListener {
+
+
+            when {
+                layout.FirstName.text.toString().isNullOrEmpty() -> {
+                    context?.toast("Please enter a first name")
+
+
+                }
+                layout.LastName.text.toString().isNullOrEmpty() -> {
+
+                    context?.toast("Please enter a last name")
+
+
+                }
+                layout.Weight.text.toString().isNullOrEmpty() -> {
+
+                    context?.toast("Please enter the weight")
+
+
+                }
+                layout.Height.text.toString().isNullOrEmpty() -> {
+
+                    context?.toast("Please enter the height")
+
+
+                }
+                else -> {
+                    context?.toast("Customer created")
+
+                    writeNewFitness(
+                        FitnessModel(
+                            profilepic = app.userImage.toString(),
+                            isfavourite = favourite,
+                            firstName = layout.FirstName.text.toString(),
+                            lastName = layout.LastName.text.toString(),
+                            height = layout.Height.text.toString(),
+                            weight = layout.Weight.text.toString(),
+                            latitude = app.currentLocation.latitude,
+                            longitude = app.currentLocation.longitude,
+                            email = app.auth.currentUser?.email
+                        )
+                    )
+
+
+                }
+
+            }
+
+
+            //Set text fields back to blank once customer is created.
+
+            fitness.firstName = layout.FirstName.setText("").toString()
+            fitness.lastName = layout.LastName.setText("").toString()
+            fitness.height = layout.Height.setText("").toString()
+            fitness.weight = layout.Weight.setText("").toString()
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
