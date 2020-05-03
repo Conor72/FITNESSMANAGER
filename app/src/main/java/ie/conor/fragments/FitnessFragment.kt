@@ -8,7 +8,6 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
-
 import ie.conor.R
 import ie.conor.main.FitnessApp
 import ie.conor.models.FitnessModel

@@ -45,8 +45,8 @@
 
     <Button
         android:id="@+id/editUpdateButton"
-        android:layout_width="153dp"
-        android:layout_height="59dp"
+        android:layout_width="148dp"
+        android:layout_height="39dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="8dp"
@@ -54,9 +54,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="#000000"
-        android:backgroundTint="#000000"
-        android:textColor="#FFFFFF"
+        android:backgroundTint="#212121"
         android:text="Create Customer"
+
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

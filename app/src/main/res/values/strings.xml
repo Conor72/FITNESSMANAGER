@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Fitness</string>
     <string name="action_fitness">Fitness</string>
-    <string name="action_report">Report</string>
+    <string name="action_report">My Customers</string>
     <string name="fitnessTitle">Welcome</string>
     <string name="fitnessSubtitle">Please Give Generously</string>
     <string name="fitnessButton">Fitness</string>
