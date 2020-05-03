@@ -49,7 +49,7 @@ class FitnessAdapter constructor(var fitnessx: ArrayList<FitnessModel>,
             itemView.tag = fitness
             itemView.firstname.text = fitness.firstName
             itemView.customerWeight.text = fitness.weight.toString()
-            if(fitness.isfavourite) itemView.imagefavourite.setImageResource(android.R.drawable.star_big_on)
+            if(fitness.isfavourite) itemView.imagefavourite.setImageResource(R.drawable.ic_premium_on)
 
             if(!reportAll)
                 itemView.setOnClickListener { listener.onFitnessClick(fitness) }

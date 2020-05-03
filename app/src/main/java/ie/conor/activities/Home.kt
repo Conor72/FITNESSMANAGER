@@ -93,8 +93,8 @@ class Home : AppCompatActivity(),
                 navigateTo(ReportFragment.newInstance())
             R.id.nav_report_all ->
                 navigateTo(ReportAllFragment.newInstance())
-            R.id.nav_favourites ->
-                navigateTo(FavouritesFragment.newInstance())
+           // R.id.nav_favourites ->                                //TODO add in working favourites list
+          //      navigateTo(FavouritesFragment.newInstance())
             R.id.nav_sign_out -> signOut()
 
             else -> toast("You Selected Something Else")
