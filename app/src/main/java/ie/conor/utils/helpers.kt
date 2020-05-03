@@ -36,7 +36,7 @@ fun createLoader(activity: FragmentActivity) : AlertDialog {
         .setView(R.layout.loading)
     var loader = loaderBuilder.create()
     loader.setTitle(R.string.app_name)
-    loader.setIcon(R.mipmap.ic_launcher_homer_round)
+    loader.setIcon(R.mipmap.ic_launcher_default_2)
 
     return loader
 }
@@ -183,7 +183,7 @@ fun validatePhoto(app: FitnessApp, activity: Activity) {
     }
     else {   // New Regular User, upload default pic of homer
         activity.navView.getHeaderView(0).imageView
-            .setImageResource(R.mipmap.ic_launcher_homer_round)
+            .setImageResource(R.mipmap.ic_launcher_default_2)
         uploadImageView(app, activity.navView.getHeaderView(0).imageView)
     }
 }

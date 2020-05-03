@@ -61,7 +61,7 @@ class FitnessAdapter constructor(var fitnessx: ArrayList<FitnessModel>,
                     .into(itemView.imageIcon)
             }
             else
-                itemView.imageIcon.setImageResource(R.mipmap.ic_launcher_homer_round)
+                itemView.imageIcon.setImageResource(R.mipmap.ic_launcher_default_2)
         }
     }
 }
